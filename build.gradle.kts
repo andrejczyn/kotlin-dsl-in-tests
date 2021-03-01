@@ -28,6 +28,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation(platform("org.junit:junit-bom:5.7.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("com.willowtreeapps.assertk:assertk:0.23.1")
 }
 
 tasks.withType<KotlinCompile> {

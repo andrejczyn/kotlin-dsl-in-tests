@@ -1,5 +1,7 @@
 package com.andrejczyn.orderinvoices.api
 
+import assertk.assertThat
+import assertk.assertions.isEqualTo
 import com.andrejczyn.orderinvoices.Application
 import io.ktor.client.*
 import io.ktor.client.features.json.*
@@ -7,6 +9,7 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.http.ContentType.Application.Json
+import io.ktor.http.HttpStatusCode.Companion.OK
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -35,7 +38,7 @@ class CreateInvoiceTest(@LocalServerPort val port: Int) {
         }
 
         //then
-        assertEquals(1, 1)
+        assertThat(response.status).isEqualTo(OK)
     }
 }
 
